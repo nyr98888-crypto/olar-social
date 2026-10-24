@@ -3,25 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfbfa;
+  --foreground: #0f172a;
+  --terracotta: #c96442;
+  --stone: #cbd5e1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  color: var(--foreground);
+  color: #0f172a;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 100% -20%, rgba(201, 100, 66, 0.07), transparent),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(203, 213, 225, 0.45), transparent);
+  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer components {
+  .olar-card {
+    @apply rounded-2xl border-2 border-slate-300 bg-white shadow-sm;
   }
+  .olar-card-title {
+    @apply text-lg font-bold text-slate-900;
+  }
+  .olar-section-title {
+    @apply text-2xl font-extrabold tracking-tight text-slate-900;
+  }
+  .olar-input {
+    @apply w-full rounded-xl border-2 border-slate-300 bg-white px-3 py-2.5 text-base text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20;
+  }
+  .olar-btn-primary {
+    @apply rounded-xl bg-slate-900 px-5 py-2.5 text-base font-bold text-white shadow-md transition hover:bg-slate-800;
+  }
+  .olar-btn-accent {
+    @apply rounded-xl bg-terracotta px-5 py-2.5 text-base font-bold text-white shadow-md transition hover:brightness-110;
+  }
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(201, 100, 66, 0.25);
 }

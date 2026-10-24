@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        porcelain: "#FBFBFA",
+        charcoal: "#0F172A",
+        terracotta: "#C96442",
+        "stone-border": "#CBD5E1",
+      },
+      fontFamily: {
+        sans: ["var(--font-heebo)", "system-ui", "sans-serif"],
+        display: ["var(--font-rubik)", "var(--font-heebo)", "sans-serif"],
       },
     },
   },
